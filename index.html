@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title data-bind="title">Launchify | منصة Systeme.io بهدية حصرية</title>
+<meta name="description" content="ابدأ مع Systeme.io عبر هذه الصفحة واحصل على كل المزايا بنفس السعر الرسمي، مع هدية حصرية." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+/* =========================================================================
+   ⚙️ ملاحظة: عدّل اسم العلامة التجارية والرابط واسم الكتاب من أسفل الصفحة
+   داخل <script> ضمن المتغيّر CONFIG — لن تحتاج لتعديل أي شيء هنا.
+   ========================================================================= */
+html, body { scroll-behavior: smooth; margin: 0; padding: 0; }
+
+.lf-root {
+  --white: #ffffff;
+  --bg-tint: #f4f8ff;
+  --blue-50: #eaf2ff;
+  --blue-100: #d7e7ff;
+  --blue-600: #2e6ff2;
+  --blue-700: #1b4fd1;
+  --navy-900: #0e1b33;
+  --slate-600: #54627a;
+  --slate-400: #8a96ac;
+  --gold-500: #d99a31;
+  --gold-100: #fbefdb;
+  --border: #dce8fb;
+
+  font-family: 'Tajawal', sans-serif;
+  color: var(--navy-900);
+  background: var(--white);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+.lf-root * { box-sizing: border-box; }
+.lf-root h1, .lf-root h2, .lf-root h3 {
+  font-family: 'El Messiri', 'Tajawal', sans-serif;
+  margin: 0;
+  color: var(--navy-900);
+}
+.lf-root p { margin: 0; }
+.lf-root ul { list-style: none; margin: 0; padding: 0; }
+.lf-root a { color: inherit; text-decoration: none; }
+.lf-root button { font-family: inherit; cursor: pointer; }
+
+.lf-root *:focus-visible {
+  outline: 3px solid var(--blue-600);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.lf-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+}
+
+.lf-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--blue-700);
+  background: var(--blue-50);
+  border: 1px solid var(--blue-100);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+.lf-section-head {
+  max-width: 660px;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+.lf-section-head h2 {
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 0.85rem;
+}
+.lf-section-head p {
+  color: var(--slate-600);
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  line-height: 1.8;
+}
+.lf-section-head.lf-center { margin-inline: auto; text-align: center; }
+
+.lf-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: var(--blue-700);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.95rem 1.9rem;
+  border-radius: 999px;
+  border: none;
+  box-shadow: 0 14px 28px -10px rgba(27, 79, 209, 0.55);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+}
+.lf-btn-primary:hover,
+.lf-btn-primary:focus-visible,
+.lf-btn-primary:active {
+  transform: translateY(-2px);
+  background: var(--navy-900);
+  color: var(--white);
+  box-shadow: 0 18px 32px -10px rgba(14, 27, 51, 0.45);
+}
+.lf-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--navy-900);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.95rem 0.5rem;
+  border-bottom: 2px solid var(--border);
+  transition: border-color 0.18s ease, color 0.18s ease;
+}
+.lf-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.93rem 1.7rem;
+  border-radius: 999px;
+  border: 2px solid var(--blue-100);
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+}
+.lf-btn-secondary:hover,
+.lf-btn-secondary:focus-visible,
+.lf-btn-secondary:active {
+  background: var(--blue-50);
+  border-color: var(--blue-600);
+}
+
+/* إصلاح: ".lf-root a" تتغلب على لون النص الافتراضي للأزرار بسبب الأولوية (specificity)،
+   لذلك نثبّت لون النص هنا بنفس قوة الأولوية كي يبقى واضحًا في كل الحالات (افتراضي/hover/active/focus) */
+.lf-root .lf-btn-primary { color: var(--white); }
+.lf-root .lf-btn-ghost { color: var(--navy-900); }
+.lf-root .lf-btn-secondary { color: var(--blue-700); }
+
+.lf-btn-ghost:hover { border-color: var(--blue-600); color: var(--blue-700); }
+
+/* ---------- Header ---------- */
+.lf-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+.lf-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem clamp(1.25rem, 4vw, 2.5rem);
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.lf-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'El Messiri', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--navy-900);
+}
+.lf-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.lf-nav-links a {
+  font-weight: 500;
+  color: var(--slate-600);
+  font-size: 0.95rem;
+  transition: color 0.15s ease;
+}
+.lf-nav-links a:hover { color: var(--blue-700); }
+.lf-header-cta { display: flex; align-items: center; gap: 0.75rem; }
+.lf-header-cta .lf-btn-primary { padding: 0.7rem 1.4rem; font-size: 0.92rem; }
+.lf-header-cta .lf-btn-secondary { padding: 0.68rem 1.2rem; font-size: 0.92rem; }
+.lf-burger {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0.4rem;
+  color: var(--navy-900);
+}
+.lf-burger i { display: flex; }
+.lf-mobile-panel {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem clamp(1.25rem, 4vw, 2.5rem) 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.lf-mobile-panel.open { display: flex; }
+.lf-mobile-panel a { font-weight: 600; color: var(--navy-900); padding: 0.4rem 0; }
+.lf-mobile-panel .lf-btn-primary,
+.lf-mobile-panel .lf-btn-secondary { justify-content: center; padding-top: 0.95rem; padding-bottom: 0.95rem; }
+
+@media (max-width: 880px) {
+  .lf-nav-links { display: none; }
+  .lf-header-cta .lf-btn-primary { display: none; }
+  .lf-header-cta .lf-btn-secondary { display: none; }
+  .lf-burger { display: inline-flex; }
+}
+
+/* ---------- Hero ---------- */
+.lf-hero {
+  padding: clamp(3rem, 7vw, 5.5rem) 0 clamp(2.5rem, 6vw, 4rem);
+  background: linear-gradient(180deg, var(--bg-tint) 0%, var(--white) 100%);
+}
+.lf-hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: center;
+}
+.lf-hero h1 {
+  font-size: clamp(2.1rem, 4.6vw, 3.3rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 1.25rem;
+}
+.lf-hero h1 .lf-accent { color: var(--blue-600); }
+.lf-hero-sub {
+  color: var(--slate-600);
+  font-size: clamp(1.02rem, 1.6vw, 1.18rem);
+  line-height: 1.85;
+  max-width: 540px;
+  margin-bottom: 1.75rem;
+}
+.lf-hero-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+.lf-trust-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+}
+.lf-trust-strip span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+  color: var(--slate-600);
+  font-weight: 500;
+}
+.lf-trust-strip i { color: var(--blue-600); flex-shrink: 0; display: flex; }
+
+/* ---------- Hero visual (signature element) ---------- */
+.lf-hero-visual { position: relative; padding: 1.5rem; }
+.lf-mock-window {
+  background: var(--white);
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: 0 30px 60px -20px rgba(14, 27, 51, 0.22);
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+.lf-mock-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.1rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-tint);
+}
+.lf-mock-bar i {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--blue-100);
+  display: inline-block;
+}
+.lf-mock-title {
+  margin-right: auto;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--slate-600);
+}
+.lf-mock-body { display: flex; }
+.lf-mock-sidebar {
+  width: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1.1rem 0.5rem;
+  border-left: 1px solid var(--border);
+  background: var(--white);
+}
+.lf-mock-sidebar .lf-mock-icon {
+  width: 34px; height: 34px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--blue-50);
+  color: var(--blue-600);
+}
+.lf-mock-main { flex: 1; padding: 1.1rem 1.2rem 1.3rem; }
+.lf-mock-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.45rem;
+  height: 90px;
+  margin-bottom: 1rem;
+}
+.lf-mock-chart span {
+  flex: 1;
+  background: linear-gradient(180deg, var(--blue-600), var(--blue-100));
+  border-radius: 6px 6px 0 0;
+}
+.lf-mock-row {
+  height: 10px;
+  border-radius: 6px;
+  background: var(--bg-tint);
+  margin-bottom: 0.6rem;
+  width: 100%;
+}
+.lf-mock-row.short { width: 60%; }
+
+.lf-float-chip {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  color: var(--slate-400);
+  box-shadow: 0 10px 20px -10px rgba(14, 27, 51, 0.18);
+  text-decoration: line-through;
+  z-index: 3;
+}
+.lf-float-chip i { color: #c2493f; text-decoration: none; display: flex; }
+.chip-1 { top: -4%; right: 4%; transform: rotate(-6deg); }
+.chip-2 { bottom: 14%; left: -6%; transform: rotate(5deg); }
+.chip-3 { top: 48%; right: -8%; transform: rotate(4deg); }
+
+@keyframes lf-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+.lf-mock-window { animation: lf-float 7s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .lf-mock-window { animation: none; }
+}
+
+@media (max-width: 980px) {
+  .lf-hero-grid { grid-template-columns: 1fr; }
+  .lf-hero-visual { max-width: 420px; margin: 0 auto; }
+  .chip-2, .chip-3 { display: none; }
+}
+
+/* ---------- Generic section ---------- */
+.lf-section { padding: clamp(3rem, 6vw, 6rem) 0; scroll-margin-top: 90px; }
+.lf-section.lf-tint { background: var(--bg-tint); }
+
+/* ---------- Features ---------- */
+.lf-feature-group { margin-bottom: clamp(2rem, 4vw, 2.75rem); }
+.lf-feature-group:last-child { margin-bottom: 0; }
+.lf-feature-group h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--blue-700);
+  margin-bottom: 1.1rem;
+  padding-right: 0.9rem;
+  border-right: 3px solid var(--blue-600);
+}
+.lf-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+}
+.lf-feature-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.25rem;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+.lf-feature-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--blue-100);
+  box-shadow: 0 16px 30px -16px rgba(14, 27, 51, 0.2);
+}
+.lf-feature-icon {
+  width: 42px; height: 42px;
+  border-radius: 12px;
+  background: var(--blue-50);
+  color: var(--blue-700);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 0.9rem;
+}
+.lf-feature-card h4 {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--navy-900);
+}
+.lf-feature-card p { font-size: 0.9rem; color: var(--slate-600); line-height: 1.7; }
+
+/* ---------- Comparison ---------- */
+.lf-table-wrap {
+  overflow-x: auto;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+}
+.lf-compare-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  background: var(--white);
+}
+.lf-compare-table th, .lf-compare-table td {
+  padding: 0.95rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.88rem;
+}
+.lf-compare-table thead th {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--navy-900);
+  background: var(--bg-tint);
+  white-space: nowrap;
+}
+.lf-row-label-head, .lf-row-label {
+  text-align: right;
+  font-weight: 700;
+  color: var(--navy-900);
+  white-space: nowrap;
+}
+.lf-col-highlight { background: var(--blue-50); }
+thead .lf-col-highlight { color: var(--blue-700); position: relative; }
+.lf-best-badge {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--blue-700);
+  margin-top: 0.2rem;
+}
+.lf-compare-table tbody tr:last-child td { border-bottom: none; }
+.lf-price-cell { font-weight: 700; font-size: 0.84rem; white-space: nowrap; }
+
+.lf-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+}
+.lf-status i { display: flex; }
+.lf-status-full { background: var(--blue-100); color: var(--blue-700); }
+.lf-status-partial { background: var(--gold-100); color: var(--gold-500); }
+.lf-status-none { background: #eef0f4; color: var(--slate-400); }
+
+/* ---------- Why buy ---------- */
+.lf-whybuy-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(2rem, 5vw, 3rem);
+  align-items: center;
+}
+.lf-value-list { display: flex; flex-direction: column; gap: 1.1rem; margin-bottom: 1.75rem; }
+.lf-value-item { display: flex; align-items: flex-start; gap: 0.9rem; }
+.lf-value-icon {
+  flex-shrink: 0;
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  background: var(--blue-700);
+  color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+}
+.lf-value-item h4 { font-size: 1.02rem; font-weight: 700; margin-bottom: 0.25rem; }
+.lf-value-item p { font-size: 0.92rem; color: var(--slate-600); line-height: 1.75; }
+
+.lf-gift-card {
+  background: var(--white);
+  border: 1px solid var(--gold-100);
+  border-radius: 22px;
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  text-align: center;
+  box-shadow: 0 24px 50px -24px rgba(14, 27, 51, 0.25);
+  position: relative;
+}
+.lf-gift-ribbon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--gold-100);
+  color: #92671e;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1.25rem;
+}
+.lf-gift-icon-wrap {
+  width: 78px; height: 78px;
+  border-radius: 50%;
+  background: var(--blue-50);
+  color: var(--blue-700);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.25rem;
+}
+.lf-gift-card h3 { font-size: 1.3rem; margin-bottom: 0.6rem; }
+.lf-gift-card p { color: var(--slate-600); font-size: 0.92rem; line-height: 1.8; margin-bottom: 0; }
+.lf-gift-divider { height: 1px; background: var(--border); margin: 1.25rem 0; }
+.lf-gift-exclusive { font-size: 0.8rem; color: var(--slate-400); }
+
+@media (max-width: 900px) {
+  .lf-whybuy-grid { grid-template-columns: 1fr; }
+  .lf-gift-card { max-width: 420px; margin: 0 auto; }
+}
+
+/* ---------- FAQ ---------- */
+.lf-faq-list { display: flex; flex-direction: column; gap: 0.85rem; max-width: 800px; margin: 0 auto; }
+.lf-faq-item {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.lf-faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.3rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy-900);
+  text-align: right;
+}
+.lf-faq-question i { flex-shrink: 0; color: var(--blue-600); transition: transform 0.25s ease; display: flex; }
+.lf-faq-question[aria-expanded="true"] i { transform: rotate(180deg); }
+.lf-faq-answer-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+.lf-faq-answer-wrap.open { grid-template-rows: 1fr; }
+.lf-faq-answer-inner { overflow: hidden; min-height: 0; }
+.lf-faq-answer-inner p {
+  padding: 0 1.3rem 1.2rem;
+  color: var(--slate-600);
+  font-size: 0.93rem;
+  line-height: 1.85;
+}
+
+/* ---------- Final CTA ---------- */
+.lf-final-cta {
+  background: linear-gradient(135deg, var(--blue-600), var(--navy-900));
+  border-radius: 28px;
+  padding: clamp(2.5rem, 6vw, 4rem);
+  text-align: center;
+  color: var(--white);
+}
+.lf-final-cta h2 {
+  color: var(--white);
+  font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+  margin-bottom: 0.9rem;
+}
+.lf-final-cta p {
+  color: #d7e3ff;
+  font-size: 1.05rem;
+  max-width: 560px;
+  margin: 0 auto 1.75rem;
+  line-height: 1.8;
+}
+.lf-final-cta .lf-btn-primary {
+  background: var(--white);
+  color: var(--blue-700);
+  box-shadow: 0 18px 36px -12px rgba(0, 0, 0, 0.35);
+}
+.lf-final-cta .lf-btn-primary:hover,
+.lf-final-cta .lf-btn-primary:focus-visible,
+.lf-final-cta .lf-btn-primary:active {
+  background: var(--navy-900);
+  color: var(--white);
+}
+.lf-final-cta .lf-btn-secondary {
+  border-color: rgba(255, 255, 255, 0.45);
+  color: var(--white);
+}
+.lf-final-cta .lf-btn-secondary:hover,
+.lf-final-cta .lf-btn-secondary:focus-visible,
+.lf-final-cta .lf-btn-secondary:active {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: var(--white);
+  color: var(--white);
+}
+.lf-final-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.lf-final-note {
+  margin-top: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: #d7e3ff;
+}
+.lf-final-note i { display: flex; }
+
+/* ---------- Footer ---------- */
+.lf-footer { padding: 2.5rem 0; border-top: 1px solid var(--border); }
+.lf-footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.lf-footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
+.lf-footer-links a { font-size: 0.9rem; color: var(--slate-600); }
+.lf-footer-links a:hover { color: var(--blue-700); }
+.lf-footer-links a.lf-whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 700;
+  color: var(--blue-700);
+  background: var(--blue-50);
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  transition: background 0.18s ease;
+}
+.lf-footer-links a.lf-whatsapp-link i { display: flex; width: 16px; height: 16px; }
+.lf-footer-links a.lf-whatsapp-link:hover { background: var(--blue-100); color: var(--blue-700); }
+.lf-disclosure {
+  font-size: 0.78rem;
+  color: var(--slate-400);
+  line-height: 1.8;
+  border-top: 1px solid var(--border);
+  padding-top: 1.25rem;
+}
+</style>
+</head>
+<body>
+<div class="lf-root">
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="lf-header">
+    <div class="lf-header-inner">
+      <a href="#hero" class="lf-logo">
+        <span data-bind="brand">Launchify</span>
+      </a>
+
+      <nav class="lf-nav-links">
+        <a href="#features">المميزات</a>
+        <a href="#comparison">المقارنة</a>
+        <a href="#why-buy">بماذا نميزك؟</a>
+        <a href="#faq">الأسئلة الشائعة</a>
+      </nav>
+
+      <div class="lf-header-cta">
+        <a class="lf-btn-secondary" data-bind-pricing href="https://systeme.io/ar/pricing/?sa=sa02742067036f314f3398133ba095073bf54e4b7e" target="_blank" rel="noopener noreferrer sponsored">
+          تحقق من الأسعار
+        </a>
+        <a class="lf-btn-primary" data-bind-link href="https://systeme.io/?sa=sa02742067036f314f3398133ba095073bf54e4b7e" target="_blank" rel="noopener noreferrer sponsored">
+          جرّب مجانًا
+        </a>
+        <button class="lf-burger" id="lf-burger" aria-label="فتح القائمة" aria-expanded="false">
+          <i data-lucide="menu" class="lf-icon-menu"></i>
+          <i data-lucide="x" class="lf-icon-close" style="display:none"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="lf-mobile-panel" id="lf-mobile-panel">
+      <a href="#features">المميزات</a>
+      <a href="#comparison">المقارنة</a>
+      <a href="#why-buy">بماذا نميزك؟</a>
+      <a href="#faq">الأسئلة الشائعة</a>
+      <a class="lf-btn-primary" data-bind-link href="https://systeme.io/?sa=sa02742067036f314f3398133ba095073bf54e4b7e" target="_blank" rel="noopener noreferrer sponsored" style="justify-content:center">
+        جرّب مجانًا الآن
+      </a>
+      <a class="lf-btn-secondary" data-bind-pricing href="https://systeme.io/ar/pricing/?sa=sa02742067036f314f3398133ba095073bf54e4b7e" target="_blank" rel="noopener noreferrer sponsored">
+        تحقق من الأسعار
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="lf-hero" id="hero">
+      <div class="lf-container lf-hero-grid">
+        <div>
+          <span class="lf-eyebrow"><i data-lucide="sparkles"></i> منصة Systeme.io + هدية حصرية</span>
+          <h1>
+            كل أدوات تسويقك ومبيعاتك،<br />
+            <span class="lf-accent">في منصة واحدة</span> بدل عشر أدوات متفرقة
+          </h1>
+          <p class="lf-hero-sub">
+            صفحات هبوط، بريد إلكتروني، دورات تدريبية، مسارات بيع، وبرنامج عمولة — كل ذلك
+            من حساب واحد وبسعر اشتراك واحد. ابدأ الآن مجانًا، واحصل أيضًا على نسخة هدية
+            من كتابي «<span data-bind="book">الكتاب الناري</span>».
+          </p>
+
+          <div class="lf-hero-cta-row">
+            <a class="lf-btn-primary" data-bind-link href="https://systeme.io/?sa=sa02742067036f314f3398133ba095073bf54e4b7e" target="_blank" rel="noopener noreferrer sponsored">
+              ابدأ مجانًا الآن <i data-lucide="arrow-left"></i>
+            </a>
+            <a class="lf-btn-secondary" data-bind-pricing href="https://systeme.io/ar/pricing/?sa=sa02742067036f314f3398133ba095073bf54e4b7e" target="_blank" rel="noopener noreferrer sponsored">
+              تحقق من الأسعار
+            </a>
+            <a class="lf-btn-ghost" href="#features">شاهد كل المميزات</a>
+          </div>
+
+          <div class="lf-trust-strip">
+            <span><i data-lucide="check"></i> بدون بطاقة دفع للبدء</span>
+            <span><i data-lucide="check"></i> ترقية أو إلغاء في أي وقت</span>
+            <span><i data-lucide="check"></i> يستخدمها رواد أعمال حول العالم</span>
+          </div>
+        </div>
+
+        <div class="lf-hero-visual">
+          <div class="lf-mock-window">
+            <div class="lf-mock-bar">
+              <i></i><i></i><i></i>
+              <span class="lf-mock-title">لوحة التحكم</span>
+            </div>
+            <div class="lf-mock-body">
+              <div class="lf-mock-sidebar">
+                <span class="lf-mock-icon"><i data-lucide="mail"></i></span>
+                <span class="lf-mock-icon"><i data-lucide="filter"></i></span>
+                <span class="lf-mock-icon"><i data-lucide="graduation-cap"></i></span>
+                <span class="lf-mock-icon"><i data-lucide="credit-card"></i></span>
+                <span class="lf-mock-icon"><i data-lucide="handshake"></i></span>
+              </div>
+              <div class="lf-mock-main">
+                <div class="lf-mock-chart">
+                  <span style="height:38%"></span>
+                  <span style="height:62%"></span>
+                  <span style="height:48%"></span>
+                  <span style="height:78%"></span>
+                  <span style="height:58%"></span>
+                  <span style="height:88%"></span>
+                  <span style="height:68%"></span>
+                </div>
+                <div class="lf-mock-row"></div>
+                <div class="lf-mock-row short"></div>
+              </div>
+            </div>
+          </div>
+          <span class="lf-float-chip chip-1">Mailchimp <i data-lucide="x"></i></span>
+          <span class="lf-float-chip chip-2">ClickFunnels <i data-lucide="x"></i></span>
+          <span class="lf-float-chip chip-3">Teachable <i data-lucide="x"></i></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FEATURES ===================== -->
+    <section class="lf-section" id="features">
+      <div class="lf-container">
+        <div class="lf-section-head">
+          <span class="lf-eyebrow">كل ما تحتاجه</span>
+          <h2>مزايا Systeme.io التي توفر عليك المال والوقت</h2>
+          <p>منصة واحدة تجمع أهم أدوات بناء وتشغيل مشروعك الرقمي، بدل التنقل بين عدة اشتراكات منفصلة.</p>
+        </div>
+
+        <div class="lf-feature-group">
+          <h3>التسويق والمبيعات</h3>
+          <div class="lf-feature-grid">
+            <div class="lf-feature-card">
+              <span class="lf-feature-icon"><i data-lucide="layout-grid"></i></span>
+              <h4>كل أدوات عملك في منصة واحدة</h4>
+              <p>تدير التسويق والمبيعات والعملاء من مكان واحد بدل التنقل بين عدة أدوات منفصلة.</p>
+            </div>
+            <div class="lf-feature-card">
+              <span class="lf-feature-icon"><i data-lucide="mouse-pointer-click"></i></span>
+              <h4>صفحات هبوط ومواقع جاهزة</h4>
+              <p>صمّم صفحات احترافية بالسحب والإفلات دون أي خبرة برمجية.</p>
+            </div>
+            <div class="lf-feature-card">
+              <span class="lf-feature-icon"><i data-lucide="mail"></i></span>
+              <h4>تسويق عبر البريد الإلكتروني</h4>
+              <p>أرسل رسائل غير محدودة مع أدوات تقسيم وأتمتة متقدمة لجمهورك.</p>
+            </div>
+            <div class="lf-feature-card">
+              <span class="lf-feature-icon"><i data-lucide="workflow"></i></span>
+              <h4>أتمتة ذكية للمهام</h4>
+              <p>اضبط سير عمل تلقائي يوفر وقتك ويحسّن تجربة عملائك دون تدخل يدوي.</p>
+            </div>
+            <div class="lf-feature-card">
+              <span class="lf-feature-icon"><i data-lucide="filter"></i></span>
+              <h4>بناء مسارات بيع متكاملة</h4>
+              <p>صمّم قمعًا تسويقيًا يحوّل الزوار إلى عملاء فعليين خطوة بخطوة.</p>
+            </div>
+            <div class="lf-feature-card">
+              <span class="lf-feature-icon"><i data-lucide="handshake"></i></span>
+              <h4>برنامج عمولة مدمج</h4>
+              <p>أنشئ نظام أفلييت خاصًا بك وأدِره دون الحاجة لأي أداة خارجية.</p>
+            </div>
+            <div class="lf-feature-card">
+              <span class="lf-feature-icon"><i data-lucide="store"></i></span>
+              <h4>بناء متاجر إلكترونية متكاملة</h4>
+              <p>أنشئ متجرك الإلكتروني الخاص وأدِر منتجاتك وطلباتك من نفس الحساب.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lf-feature-group">
+          <h3>المحتوى والمنتجات</h3>
+          <div class="lf-feature-grid">
+            <div class="lf-feature-card">
+              <span class="lf-feature-icon"><i data-lucide="graduation-cap"></i></span>
+              <h4>إنشاء وبيع الدورات التدريبية</h4>
+              <p>استضف دوراتك الرقمية وأدِرها بالكامل من نفس الحساب دون أي منصة إضافية.</p>
+            </div>
+            <div class="lf-feature-card">
+              <span class="lf-feature-icon"><i data-lucide="package"></i></span>
+              <h4>بيع منتجات رقمية ومادية</h4>
+              <p>اعرض الكتب الإلكترونية والخدمات والمنتجات المادية بنفس السهولة.</p>
+            </div>
+            <div class="lf-feature-card">
+              <span class="lf-feature-icon"><i data-lucide="contact"></i></span>
+              <h4>إدارة جهات الاتصال والعملاء</h4>
+              <p>نظّم مشتركيك، قسّمهم حسب اهتماماتهم، وتابع نشاطهم بدقة.</p>
+            </div>
+            <div class="lf-feature-card">
+              <span class="lf-feature-icon"><i data-lucide="credit-card"></i></span>
+              <h4>دعم طرق دفع متعددة</h4>
+              <p>تكامل مباشر مع Stripe وPayPal لاستقبال مدفوعاتك بسهولة وأمان.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lf-feature-group">
+          <h3>سهولة وكفاءة التشغيل</h3>
+          <div class="lf-feature-grid">
+            <div class="lf-feature-card">
+              <span class="lf-feature-icon"><i data-lucide="sparkles"></i></span>
+              <h4>واجهة بسيطة لكل المستويات</h4>
+              <p>مناسبة للمبتدئين والمحترفين، بمنحنى تعلّم قصير جدًا.</p>
+            </div>
+            <div class="lf-feature-card">
+              <span class="lf-feature-icon"><i data-lucide="piggy-bank"></i></span>
+              <h4>توفير حقيقي في التكاليف</h4>
+              <p>اشتراك واحد منخفض التكلفة يغطي وظائف كانت تحتاج عدة أدوات منفصلة.</p>
+            </div>
+            <div class="lf-feature-card">
+              <span class="lf-feature-icon"><i data-lucide="gift"></i></span>
+              <h4>خطة مجانية فعليًا</h4>
+              <p>ابدأ بدون أي دفعة، واحصل على مزايا أساسية قوية تكفي للانطلاق.</p>
+            </div>
+            <div class="lf-feature-card">
+              <span class="lf-feature-icon"><i data-lucide="cloud"></i></span>
+              <h4>استضافة غير محدودة</h4>
+              <p>استضف دوراتك وصفحاتك دون الحاجة إلى أي خدمة استضافة إضافية.</p>
+            </div>
+            <div class="lf-feature-card">
+              <span class="lf-feature-icon"><i data-lucide="trending-up"></i></span>
+              <h4>تتوسع مع نمو مشروعك</h4>
+              <p>تناسب البداية المتواضعة، وتبقى كافية أيضًا في مرحلة الاحتراف.</p>
+            </div>
+            <div class="lf-feature-card">
+              <span class="lf-feature-icon"><i data-lucide="rocket"></i></span>
+              <h4>انطلاقة سريعة جدًا</h4>
+              <p>جهّز مشروعك الرقمي بالكامل خلال وقت قصير جدًا، دون تعقيد.</p>
+            </div>
+            <div class="lf-feature-card">
+              <span class="lf-feature-icon"><i data-lucide="bot"></i></span>
+              <h4>مساعد ذكاء اصطناعي من داخل الأداة</h4>
+              <p>مساعد ذكي مدمج يرشدك ويعلّمك كيفية استخدام المنصة خطوة بخطوة وقت الحاجة.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lf-feature-group">
+          <h3>مرونة وقيمة حقيقية</h3>
+          <div class="lf-feature-grid">
+            <div class="lf-feature-card">
+              <span class="lf-feature-icon"><i data-lucide="briefcase"></i></span>
+              <h4>تناسب أنواع أعمال متعددة</h4>
+              <p>للمدربين، صناع المحتوى، المسوقين، وأصحاب المتاجر الرقمية والشركات الصغيرة.</p>
+            </div>
+            <div class="lf-feature-card">
+              <span class="lf-feature-icon"><i data-lucide="puzzle"></i></span>
+              <h4>تعقيد تقني أقل</h4>
+              <p>الاعتماد على منصة واحدة يقلل من مشاكل الربط بين أدوات متفرقة.</p>
+            </div>
+            <div class="lf-feature-card">
+              <span class="lf-feature-icon"><i data-lucide="clock"></i></span>
+              <h4>وقت أكبر، إنتاجية أعلى</h4>
+              <p>أدِر التسويق والمبيعات والدورات والعملاء من لوحة تحكم واحدة.</p>
+            </div>
+            <div class="lf-feature-card">
+              <span class="lf-feature-icon"><i data-lucide="badge-check"></i></span>
+              <h4>قيمة كبيرة مقابل السعر</h4>
+              <p>وظائف كثيرة بتكلفة أقل بشكل ملحوظ من أغلب المنافسين في السوق.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== COMPARISON ===================== -->
+    <section class="lf-section lf-tint" id="comparison">
+      <div class="lf-container">
+        <div class="lf-section-head">
+          <span class="lf-eyebrow">المقارنة</span>
+          <h2>لماذا تكفيك Systeme.io بدل خمس أدوات منفصلة؟</h2>
+          <p>مقارنة مباشرة بين Systeme.io وأشهر الأدوات المنافسة، من حيث المزايا المتوفرة فعليًا والتكلفة الشهرية التقريبية.</p>
+        </div>
+
+        <div class="lf-table-wrap">
+          <table class="lf-compare-table">
+            <thead>
+              <tr>
+                <th class="lf-row-label-head">المقارنة</th>
+                <th class="lf-col-highlight">Systeme.io<span class="lf-best-badge">✓ الأفضل قيمة</span></th>
+                <th>ClickFunnels</th>
+                <th>Kajabi</th>
+                <th>Kartra</th>
+                <th>Teachable</th>
+                <th>Mailchimp + WordPress + أدوات متفرقة</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="lf-row-label">صفحات الهبوط والمواقع</td>
+                <td class="lf-col-highlight"><span class="lf-status lf-status-full"><i data-lucide="check"></i></span></td>
+                <td><span class="lf-status lf-status-full"><i data-lucide="check"></i></span></td>
+                <td><span class="lf-status lf-status-full"><i data-lucide="check"></i></span></td>
+                <td><span class="lf-status lf-status-full"><i data-lucide="check"></i></span></td>
+                <td><span class="lf-status lf-status-partial"><i data-lucide="minus"></i></span></td>
+                <td><span class="lf-status lf-status-partial"><i data-lucide="minus"></i></span></td>
+              </tr>
+              <tr>
+                <td class="lf-row-label">التسويق عبر البريد الإلكتروني</td>
+                <td class="lf-col-highlight"><span class="lf-status lf-status-full"><i data-lucide="check"></i></span></td>
+                <td><span class="lf-status lf-status-partial"><i data-lucide="minus"></i></span></td>
+                <td><span class="lf-status lf-status-full"><i data-lucide="check"></i></span></td>
+                <td><span class="lf-status lf-status-full"><i data-lucide="check"></i></span></td>
+                <td><span class="lf-status lf-status-none"><i data-lucide="x"></i></span></td>
+                <td><span class="lf-status lf-status-full"><i data-lucide="check"></i></span></td>
+              </tr>
+              <tr>
+                <td class="lf-row-label">الأتمتة وسير العمل</td>
+                <td class="lf-col-highlight"><span class="lf-status lf-status-full"><i data-lucide="check"></i></span></td>
+                <td><span class="lf-status lf-status-partial"><i data-lucide="minus"></i></span></td>
+                <td><span class="lf-status lf-status-full"><i data-lucide="check"></i></span></td>
+                <td><span class="lf-status lf-status-full"><i data-lucide="check"></i></span></td>
+                <td><span class="lf-status lf-status-none"><i data-lucide="x"></i></span></td>
+                <td><span class="lf-status lf-status-partial"><i data-lucide="minus"></i></span></td>
+              </tr>
+              <tr>
+                <td class="lf-row-label">استضافة الدورات التدريبية</td>
+                <td class="lf-col-highlight"><span class="lf-status lf-status-full"><i data-lucide="check"></i></span></td>
+                <td><span class="lf-status lf-status-full"><i data-lucide="check"></i></span></td>
+                <td><span class="lf-status lf-status-full"><i data-lucide="check"></i></span></td>
+                <td><span class="lf-status lf-status-full"><i data-lucide="check"></i></span></td>
+                <td><span class="lf-status lf-status-full"><i data-lucide="check"></i></span></td>
+                <td><span class="lf-status lf-status-none"><i data-lucide="x"></i></span></td>
+              </tr>
+              <tr>
+                <td class="lf-row-label">مسارات البيع (Sales Funnels)</td>
+                <td class="lf-col-highlight"><span class="lf-status lf-status-full"><i data-lucide="check"></i></span></td>
+                <td><span class="lf-status lf-status-full"><i data-lucide="check"></i></span></td>
+                <td><span class="lf-status lf-status-full"><i data-lucide="check"></i></span></td>
+                <td><span class="lf-status lf-status-full"><i data-lucide="check"></i></span></td>
+                <td><span class="lf-status lf-status-none"><i data-lucide="x"></i></span></td>
+                <td><span class="lf-status lf-status-none"><i data-lucide="x"></i></span></td>
+              </tr>
+              <tr>
+                <td class="lf-row-label">برنامج تسويق بالعمولة</td>
+                <td class="lf-col-highlight"><span class="lf-status lf-status-full"><i data-lucide="check"></i></span></td>
+                <td><span class="lf-status lf-status-full"><i data-lucide="check"></i></span></td>
+                <td><span class="lf-status lf-status-partial"><i data-lucide="minus"></i></span></td>
+                <td><span class="lf-status lf-status-full"><i data-lucide="check"></i></span></td>
+                <td><span class="lf-status lf-status-partial"><i data-lucide="minus"></i></span></td>
+                <td><span class="lf-status lf-status-none"><i data-lucide="x"></i></span></td>
+              </tr>
+              <tr>
+                <td class="lf-row-label">خطة مجانية للبدء</td>
+                <td class="lf-col-highlight"><span class="lf-status lf-status-full"><i data-lucide="check"></i></span></td>
+                <td><span class="lf-status lf-status-none"><i data-lucide="x"></i></span></td>
+                <td><span class="lf-status lf-status-none"><i data-lucide="x"></i></span></td>
+                <td><span class="lf-status lf-status-none"><i data-lucide="x"></i></span></td>
+                <td><span class="lf-status lf-status-none"><i data-lucide="x"></i></span></td>
+                <td><span class="lf-status lf-status-partial"><i data-lucide="minus"></i></span></td>
+              </tr>
+              <tr>
+                <td class="lf-row-label">السعر الشهري التقريبي</td>
+                <td class="lf-col-highlight"><span class="lf-price-cell">مجاني-17$-97$</span></td>
+                <td><span class="lf-price-cell">$97 – $297</span></td>
+                <td><span class="lf-price-cell">$69 – $399</span></td>
+                <td><span class="lf-price-cell">$99 – $429</span></td>
+                <td><span class="lf-price-cell">$159 – $249</span></td>
+                <td><span class="lf-price-cell">$100+ بعد تجميع الأدوات</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WHY BUY THROUGH ME ===================== -->
+    <section class="lf-section" id="why-buy">
+      <div class="lf-container lf-whybuy-grid">
+        <div>
+          <span class="lf-eyebrow">عرض خاص</span>
+          <h2 style="font-size:clamp(1.7rem,3.4vw,2.4rem);margin-bottom:1rem">
+            لماذا تشترك من خلال هذه الصفحة بالتحديد؟
+          </h2>
+          <p style="color:var(--slate-600);line-height:1.8;margin-bottom:2rem">
+            نفس Systeme.io، نفس السعر الرسمي تمامًا — لكن مع إضافة بسيطة تستحق وقتك.
+          </p>
+
+          <div class="lf-value-list">
+            <div class="lf-value-item">
+              <span class="lf-value-icon"><i data-lucide="badge-check"></i></span>
+              <div>
+                <h4>كل مزايا Systeme.io كاملة</h4>
+                <p>تحصل على المنصة بكل وظائفها دون أي رسوم إضافية على السعر الرسمي المعلن.</p>
+              </div>
+            </div>
+            <div class="lf-value-item">
+              <span class="lf-value-icon"><i data-lucide="book-open"></i></span>
+              <div>
+                <h4>نسخة هدية من «<span data-bind="book">الكتاب الناري</span>»</h4>
+                <p>كتابي المتخصص في الربح من تجارة المنتجات الرقمية، هدية لكل من يسجل عبر هذه الصفحة.</p>
+              </div>
+            </div>
+            <div class="lf-value-item">
+              <span class="lf-value-icon"><i data-lucide="handshake"></i></span>
+              <div>
+                <h4>إرشاد ودعم عند الإعداد</h4>
+                <p>تواصل معي بعد التسجيل، وسأساعدك في إعداد حسابك وخطواتك الأولى داخل المنصة.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lf-hero-cta-row">
+            <a class="lf-btn-primary" data-bind-link href="https://systeme.io/?sa=sa02742067036f314f3398133ba095073bf54e4b7e" target="_blank" rel="noopener noreferrer sponsored">
+              ابدأ الآن واحصل على هديتك <i data-lucide="arrow-left"></i>
+            </a>
+            <a class="lf-btn-secondary" data-bind-pricing href="https://systeme.io/ar/pricing/?sa=sa02742067036f314f3398133ba095073bf54e4b7e" target="_blank" rel="noopener noreferrer sponsored">
+              تحقق من الأسعار
+            </a>
+          </div>
+        </div>
+
+        <div class="lf-gift-card">
+          <span class="lf-gift-ribbon"><i data-lucide="gift"></i> هدية حصرية</span>
+          <div class="lf-gift-icon-wrap"><i data-lucide="book-open" style="width:34px;height:34px"></i></div>
+          <h3 data-bind="book">الكتاب الناري</h3>
+          <p>دليلك للانطلاق في الربح من تجارة المنتجات الرقمية، خطوة بخطوة.</p>
+          <div class="lf-gift-divider"></div>
+          <span class="lf-gift-exclusive">متاح فقط لمن يسجل عبر هذه الصفحة</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="lf-section lf-tint" id="faq">
+      <div class="lf-container">
+        <div class="lf-section-head lf-center">
+          <span class="lf-eyebrow">الأسئلة الشائعة</span>
+          <h2>أسئلة قد تخطر في بالك</h2>
+          <p>إن لم تجد إجابة سؤالك هنا، تواصل معي مباشرة وسأكون سعيدًا بمساعدتك.</p>
+        </div>
+
+        <div class="lf-faq-list">
+          <div class="lf-faq-item">
+            <button class="lf-faq-question" aria-expanded="true">
+              هل يمكنني تجربة Systeme.io مجانًا قبل الدفع؟
+              <i data-lucide="chevron-down"></i>
+            </button>
+            <div class="lf-faq-answer-wrap open">
+              <div class="lf-faq-answer-inner">
+                <p>نعم، تتوفر خطة مجانية فعلية تتيح لك تجربة أهم مزايا المنصة دون الحاجة لإدخال أي بطاقة دفع.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lf-faq-item">
+            <button class="lf-faq-question" aria-expanded="false">
+              هل سعري سيكون أعلى إذا اشتركت من خلالكم؟
+              <i data-lucide="chevron-down"></i>
+            </button>
+            <div class="lf-faq-answer-wrap">
+              <div class="lf-faq-answer-inner">
+                <p>لا، السعر تمامًا نفس السعر الرسمي المعروض على موقع Systeme.io. الاشتراك عبر رابطي لا يضيف عليك أي تكلفة إضافية.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lf-faq-item">
+            <button class="lf-faq-question" aria-expanded="false">
+              <span>كيف أحصل على نسخة "<span data-bind="book">الكتاب الناري</span>" بعد التسجيل؟</span>
+              <i data-lucide="chevron-down"></i>
+            </button>
+            <div class="lf-faq-answer-wrap">
+              <div class="lf-faq-answer-inner">
+                <p>بعد إنشاء حسابك من خلال الرابط الموجود في هذه الصفحة، تواصل معي مباشرة وسأرسل لك نسختك فورًا.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lf-faq-item">
+            <button class="lf-faq-question" aria-expanded="false">
+              هل المنصة مناسبة لي إن لم تكن لدي خبرة تقنية؟
+              <i data-lucide="chevron-down"></i>
+            </button>
+            <div class="lf-faq-answer-wrap">
+              <div class="lf-faq-answer-inner">
+                <p>بالتأكيد، صُممت الواجهة لتكون بسيطة وواضحة حتى للمبتدئين تمامًا، دون حاجة لأي خبرة برمجية مسبقة.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lf-faq-item">
+            <button class="lf-faq-question" aria-expanded="false">
+              هل يمكنني تغيير باقتي أو ترقيتها لاحقًا؟
+              <i data-lucide="chevron-down"></i>
+            </button>
+            <div class="lf-faq-answer-wrap">
+              <div class="lf-faq-answer-inner">
+                <p>نعم، يمكنك البدء بالخطة المناسبة لحجم مشروعك الآن، والترقية في أي وقت مع نمو أعمالك.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lf-faq-item">
+            <button class="lf-faq-question" aria-expanded="false">
+              ما الذي يميز Systeme.io فعليًا عن الأدوات المنفصلة؟
+              <i data-lucide="chevron-down"></i>
+            </button>
+            <div class="lf-faq-answer-wrap">
+              <div class="lf-faq-answer-inner">
+                <p>تجمع أهم أدوات التسويق والمبيعات والدورات في مكان واحد، بدل التنقل بين عدة اشتراكات وأدوات غير متصلة ببعضها.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FINAL CTA ===================== -->
+    <section class="lf-section">
+      <div class="lf-container">
+        <div class="lf-final-cta">
+          <h2>جاهز تبني مشروعك الرقمي بمنصة واحدة؟</h2>
+          <p>انضم إلى Systeme.io الآن عبر هذه الصفحة، وابدأ بخطة مجانية كاملة، مع نسخة هدية من «<span data-bind="book">الكتاب الناري</span>».</p>
+          <div class="lf-final-cta-row">
+            <a class="lf-btn-primary" data-bind-link href="https://systeme.io/?sa=sa02742067036f314f3398133ba095073bf54e4b7e" target="_blank" rel="noopener noreferrer sponsored">
+              ابدأ مجانًا الآن <i data-lucide="arrow-left"></i>
+            </a>
+            <a class="lf-btn-secondary" data-bind-pricing href="https://systeme.io/ar/pricing/?sa=sa02742067036f314f3398133ba095073bf54e4b7e" target="_blank" rel="noopener noreferrer sponsored">
+              تحقق من الأسعار
+            </a>
+          </div>
+          <div class="lf-final-note"><i data-lucide="gift"></i> + هدية حصرية عند التسجيل من هذه الصفحة</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="lf-footer">
+    <div class="lf-container">
+      <div class="lf-footer-top">
+        <span class="lf-logo">
+          <span data-bind="brand">Launchify</span>
+        </span>
+        <div class="lf-footer-links">
+          <a href="#features">المميزات</a>
+          <a href="#comparison">المقارنة</a>
+          <a href="#why-buy">بماذا نميزك؟</a>
+          <a href="#faq">الأسئلة الشائعة</a>
+          <a class="lf-whatsapp-link" href="https://wa.me/972594913469" target="_blank" rel="noopener noreferrer">
+            <i data-lucide="message-circle"></i> واتساب
+          </a>
+        </div>
+      </div>
+      <p class="lf-disclosure">
+        © <span id="lf-year"></span> <span data-bind="brand">Launchify</span>. جميع الحقوق محفوظة.
+      </p>
+    </div>
+  </footer>
+
+</div>
+
+<!-- مكتبة الأيقونات (Lucide) -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>
+  /* =========================================================================
+     ⚙️ منطقة الإعدادات السريعة — عدّل هذه القيم فقط دون لمس باقي الكود
+     ========================================================================= */
+  const CONFIG = {
+    brand: 'Launchify',
+    link: 'https://systeme.io/?sa=sa02742067036f314f3398133ba095073bf54e4b7e',
+    book: 'الكتاب الناري',
+    whatsapp: 'https://wa.me/972594913469',
+    pricing: 'https://systeme.io/ar/pricing/?sa=sa02742067036f314f3398133ba095073bf54e4b7e',
+  };
+
+  // تطبيق القيم على كل عناصر الصفحة دفعة واحدة
+  document.querySelectorAll('[data-bind="brand"]').forEach((el) => { el.textContent = CONFIG.brand; });
+  document.querySelectorAll('[data-bind="book"]').forEach((el) => { el.textContent = CONFIG.book; });
+  document.querySelectorAll('[data-bind-link]').forEach((el) => { el.href = CONFIG.link; });
+  document.querySelectorAll('[data-bind-pricing]').forEach((el) => { el.href = CONFIG.pricing; });
+  document.querySelectorAll('.lf-whatsapp-link').forEach((el) => { el.href = CONFIG.whatsapp; });
+  document.title = CONFIG.brand + ' | منصة Systeme.io بهدية حصرية';
+  document.getElementById('lf-year').textContent = new Date().getFullYear();
+
+  // تفعيل أيقونات Lucide
+  if (window.lucide) { window.lucide.createIcons(); }
+
+  // قائمة الجوال (فتح/إغلاق)
+  const burger = document.getElementById('lf-burger');
+  const mobilePanel = document.getElementById('lf-mobile-panel');
+  const menuIcon = burger.querySelector('.lf-icon-menu');
+  const closeIcon = burger.querySelector('.lf-icon-close');
+
+  burger.addEventListener('click', () => {
+    const isOpen = mobilePanel.classList.toggle('open');
+    burger.setAttribute('aria-expanded', String(isOpen));
+    menuIcon.style.display = isOpen ? 'none' : '';
+    closeIcon.style.display = isOpen ? '' : 'none';
+  });
+  mobilePanel.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      mobilePanel.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      menuIcon.style.display = '';
+      closeIcon.style.display = 'none';
+    });
+  });
+
+  // الأسئلة الشائعة (أكورديون: عنصر واحد مفتوح في كل مرة)
+  const faqButtons = document.querySelectorAll('.lf-faq-question');
+  faqButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const wrap = btn.nextElementSibling;
+      const willOpen = btn.getAttribute('aria-expanded') !== 'true';
+
+      faqButtons.forEach((b) => {
+        b.setAttribute('aria-expanded', 'false');
+        b.nextElementSibling.classList.remove('open');
+      });
+
+      if (willOpen) {
+        btn.setAttribute('aria-expanded', 'true');
+        wrap.classList.add('open');
+      }
+    });
+  });
+</script>
+</body>
+</html>
